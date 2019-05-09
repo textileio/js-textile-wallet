@@ -76,17 +76,6 @@
 					<p>Accounts are generated via the wallet pass-phrase and are an Ed25519 public/private keypair
 						used to sign backups, provision libp2p identities, etc. Textile uses Ed25519 here because
 					it&#39;s fast, compact, secure, and widely used. See the EdDSA Wikipedia page for more details.</p>
-					<p>WARNING! Store the derived pass-phrases in a safe place!
-						WARNING! If you lose your words, you will lose access to data in all derived accounts!
-					WARNING! Anyone who has access to these words can access your wallet accounts!</p>
-					<dl class="tsd-comment-tags">
-						<dt>param</dt>
-						<dd><p>API options object</p>
-						</dd>
-						<dt>extends</dt>
-						<dd><p>API</p>
-						</dd>
-					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -108,12 +97,6 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="wallet.html#recoveryphrase" class="tsd-kind-icon">recovery<wbr>Phrase</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="wallet.html#accountat" class="tsd-kind-icon">account<wbr>At</a></li>
@@ -130,13 +113,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Wallet<span class="tsd-signature-symbol">(</span>recoveryPhrase<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, check<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Wallet<span class="tsd-signature-symbol">(</span>recoveryPhrase<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, check<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="wallet.html" class="tsd-signature-type">Wallet</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L80">index.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L75">index.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -145,9 +128,9 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><p>const mnemonic = &#39;blah lava place private blah blah blah magic truth verify kite blah&#39;
-											const wallet = new Wallet(mnemonic, true)
-										console.log(wallet.accountAt(0))</p>
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">const</span> mnemonic = <span class="hljs-string">'blah lava place private blah blah blah magic truth verify kite blah'</span>
+<span class="hljs-keyword">const</span> wallet = <span class="hljs-keyword">new</span> Wallet(mnemonic, <span class="hljs-literal">true</span>)
+<span class="hljs-built_in">console</span>.log(wallet.accountAt(<span class="hljs-number">0</span>))</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -162,7 +145,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> check: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> check: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Wheather to validate the input recovery phrase</p>
@@ -173,19 +156,6 @@
 							<h4 class="tsd-returns-title">Returns <a href="wallet.html" class="tsd-signature-type">Wallet</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="recoveryphrase" class="tsd-anchor"></a>
-					<h3>recovery<wbr>Phrase</h3>
-					<div class="tsd-signature tsd-kind-icon">recovery<wbr>Phrase<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L80">index.ts:80</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -200,7 +170,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L109">index.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L106">index.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -240,7 +210,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L76">index.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L71">index.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -271,7 +241,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L51">index.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L46">index.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -317,9 +287,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="wallet.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="wallet.html#recoveryphrase" class="tsd-kind-icon">recovery<wbr>Phrase</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="wallet.html#accountat" class="tsd-kind-icon">account<wbr>At</a>

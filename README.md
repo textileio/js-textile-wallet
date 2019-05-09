@@ -22,6 +22,7 @@ Join us on our [public Slack channel](https://slack.textile.io/) for news, discu
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Background](#background)
 - [Development](#development)
+- [Browser](#browser)
 - [Documentation](#documentation)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
@@ -61,6 +62,21 @@ yarn browser
 ```
 
 These will both build and add the exported Javascript files to `dist`, ready to be used in your next NodeJS, browser, React, Vue, or whatever app!
+
+## Browser
+
+Running `yarn browser` will produce a minified `bundle.js` in `dist`. This can be included in your browser app using something like:
+
+```html
+<!DOCTYPE html>
+<html>
+...
+<script src="./dist/bundle.js"></script>
+...
+</html>
+```
+
+You'll have a global `var wallet` variable which gives you access to the Textile Wallet and other exported objects.
 
 ## Documentation
 

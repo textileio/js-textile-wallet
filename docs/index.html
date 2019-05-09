@@ -106,6 +106,12 @@ yarn lint</code></pre>
 				<p>And even build a nice browser-compatible bundle with:</p>
 				<pre><code class="language-sh">yarn browser</code></pre>
 				<p>These will both build and add the exported Javascript files to <code>dist</code>, ready to be used in your next NodeJS, browser, React, Vue, or whatever app!</p>
+				<h2 id="browser">Browser</h2>
+				<p>Running <code>yarn browser</code> will produce a minified <code>bundle.js</code> in <code>dist</code>. This can be included in your browser app using something like:</p>
+				<pre><code class="language-html">...
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./dist/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+...</code></pre>
+				<p>You&#39;ll have a global <code>var wallet</code> variable which gives you access to the Textile Wallet and other exported objects.</p>
 				<h2 id="documentation">Documentation</h2>
 				<p>The auto-generated documentation can be found at <a href="https://textileio.github.io/js-wallet/">https://textileio.github.io/js-wallet/</a>.</p>
 				<pre><code class="language-sh"><span class="hljs-comment"># Re-build the documentation</span>

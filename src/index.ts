@@ -15,6 +15,8 @@ export interface Account {
   address: string
 }
 
+export { Keypair }
+
 // Textile account path format used for key pair derivation as described in SEP-00XX
 const TEXTILE_BIP44 = `m/44'/406'`
 
@@ -38,13 +40,6 @@ function createMasterKey(seed: Buffer) {
  * Accounts are generated via the wallet pass-phrase and are an Ed25519 public/private keypair
  * used to sign backups, provision libp2p identities, etc. Textile uses Ed25519 here because
  * it's fast, compact, secure, and widely used. See the EdDSA Wikipedia page for more details.
- *
- * WARNING! Store the derived pass-phrases in a safe place!
- * WARNING! If you lose your words, you will lose access to data in all derived accounts!
- * WARNING! Anyone who has access to these words can access your wallet accounts!
- *
- * @param {ApiOptions} opts API options object
- * @extends API
  */
 export default class Wallet {
   /** Generate a new Walet from a given word count */
@@ -77,7 +72,7 @@ export default class Wallet {
     return new Wallet(bip39.generateMnemonic(strength))
   }
 
-  recoveryPhrase: string
+  private recoveryPhrase: string
 
   /**
    * Initialize a new Wallet
@@ -85,11 +80,13 @@ export default class Wallet {
    * @param recoveryPhrase Mnemonic pass-phrase (aka wordlist, recovery phrase, etc)
    * @param check Wheather to validate the input recovery phrase
    * @example
+   * ```typescript
    * const mnemonic = 'blah lava place private blah blah blah magic truth verify kite blah'
    * const wallet = new Wallet(mnemonic, true)
    * console.log(wallet.accountAt(0))
+   * ```
    */
-  constructor(recoveryPhrase: string, check?: boolean) {
+  constructor(recoveryPhrase: string, check: boolean = false) {
     if (check && !bip39.validateMnemonic(recoveryPhrase)) {
       throw new Error('Invalid recovery phrase')
     }
