@@ -20,7 +20,13 @@ Join us on our [public Slack channel](https://slack.textile.io/) for news, discu
 ## Table of Contents
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC) -->
-toc will be generated here
+- [Background](#background)
+- [Development](#development)
+- [Documentation](#documentation)
+- [Maintainer](#maintainer)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
+- [License](#license)
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Background
@@ -86,6 +92,10 @@ This library is a work in progress. As such, there's a few things you can do rig
 ## Contributors
 <!-- Update with yarn credit -->
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
+| **Commits** | **Contributor** |  
+| --- | --- |  
+| 1 | [carsonfarmer](https://github.com/carsonfarmer) |  
+
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 
 ## License
