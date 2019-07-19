@@ -3,6 +3,8 @@ import { BIP32 } from './bip32'
 import { Keypair } from './keypair'
 import { hmacSHA512 } from './crypto'
 
+export * from './keypair'
+
 /**
  * A derived Wallet account
  * @property index The index for the given account
@@ -10,12 +12,10 @@ import { hmacSHA512 } from './crypto'
  * @property address The Ed25519 public key
  */
 export interface Account {
-  index: number
+  index: number | number[]
   seed: string
   address: string
 }
-
-export { Keypair }
 
 // Textile account path format used for key pair derivation as described in SEP-00XX
 const TEXTILE_BIP44 = `m/44'/406'`
@@ -94,20 +94,29 @@ export default class Wallet {
   }
 
   /**
-   * Accesses derived accounts (address/seed pairs) from a wallet
+   * Accesses derived accounts (address/seed pairs) from a Textile wallet
    *
-   * Derives key for a path in BIP-44 format and a seed.
-   * Ed25119 derivation operated on hardened keys only.
+   * Derives (hardened) key for a path in BIP-44 format from a given seed.
    *
-   * @param index Account index
+   * @param index Account index. This is the (possibly multi-dimensional) index at which to
+   * derive an account key. For highly hierarchical systems, an index of arbitrary dimension can
+   * be used. For example, to derive the 3rd 2nd-level keypair, of the 1st account, index would
+   * be [0, 3].
    * @param password Mnemonic recovery phrase password (omit if none)
-   * @returns A derived Wallet account
+   * @returns A derived Wallet Account
    */
-  accountAt(index: number, password?: string): Account {
+  accountAt(index: number | number[], password?: string): Account {
     const seed = bip39.mnemonicToSeed(this.recoveryPhrase, password)
     const masterKey = createMasterKey(seed)
     const baseKey = masterKey.derivePath(TEXTILE_BIP44)
-    const accountKey = baseKey.deriveHardened(index)
+    const start = Array.isArray(index) ? index[0] : index
+    let accountKey = baseKey.deriveHardened(start)
+    if (Array.isArray(index) && index.length > 1) {
+      for (const i of index.slice(1)) {
+        accountKey = accountKey.deriveHardened(i)
+      }
+    }
+    // @todo: Should we just return the Keypair object?
     const kp = Keypair.fromRawEd25519Seed(accountKey.privateKey)
     return {
       index,
