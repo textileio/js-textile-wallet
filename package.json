@@ -1,6 +1,6 @@
 {
-  "name": "@textile/js-wallet",
-  "version": "0.1.1",
+  "name": "@textile/wallet",
+  "version": "0.2.0",
   "description": "Official Textile data wallet Javascript implementation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/textileio/js-http-client.git"
+    "url": "https://github.com/textileio/js-textile-wallet.git"
   },
   "bugs": {
-    "url": "https://github.com/textileio/js-http-client/issues"
+    "url": "https://github.com/textileio/js-textile-wallet/issues"
   },
   "keywords": [
     "textile",

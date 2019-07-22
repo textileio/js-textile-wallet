@@ -1,7 +1,7 @@
 import Wallet, { Account } from '../index'
 
 const mnemonic = 'atom check bronze man connect iron swear degree excess dawn quantum sting'
-const expected: Account[] = [
+const expected = [
   {
     index: 0,
     address: 'P6qX6kYu7ntDWYYsGb5beKPCnwZJkzkhPrj4bBrAES6nLAHU',
@@ -28,9 +28,9 @@ describe('wallet accountAt', () => {
   it('should create a valid Textile wallet account', () => {
     const wallet = new Wallet(mnemonic, true)
     expected.forEach((correct, index) => {
-      const observed = wallet.accountAt(index)
-      expect(observed.address).toEqual(correct.address)
-      expect(observed.seed).toEqual(correct.seed)
+      const { keypair } = wallet.accountAt(index)
+      expect(keypair.publicKey()).toEqual(correct.address)
+      expect(keypair.secret()).toEqual(correct.seed)
     })
   })
 })

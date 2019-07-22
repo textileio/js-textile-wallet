@@ -8,13 +8,11 @@ export * from './keypair'
 /**
  * A derived Wallet account
  * @property index The index for the given account
- * @property seed The Ed25519 private seed/key
- * @property address The Ed25519 public key
+ * @property keypair The associated account Keypair
  */
 export interface Account {
   index: number | number[]
-  seed: string
-  address: string
+  keypair: Keypair
 }
 
 // Textile account path format used for key pair derivation as described in SEP-00XX
@@ -42,7 +40,7 @@ function createMasterKey(seed: Buffer) {
  * it's fast, compact, secure, and widely used. See the EdDSA Wikipedia page for more details.
  */
 export default class Wallet {
-  /** Generate a new Walet from a given word count */
+  /** Generate a new Wallet from a given word count */
   static fromWordCount(wordCount: number) {
     return Wallet.fromEntropy(
       ((count) => {
@@ -78,13 +76,7 @@ export default class Wallet {
    * Initialize a new Wallet
    *
    * @param recoveryPhrase Mnemonic pass-phrase (aka wordlist, recovery phrase, etc)
-   * @param check Wheather to validate the input recovery phrase
-   * @example
-   * ```typescript
-   * const mnemonic = 'blah lava place private blah blah blah magic truth verify kite blah'
-   * const wallet = new Wallet(mnemonic, true)
-   * console.log(wallet.accountAt(0))
-   * ```
+   * @param check Whether to validate the input recovery phrase
    */
   constructor(recoveryPhrase: string, check: boolean = false) {
     if (check && !bip39.validateMnemonic(recoveryPhrase)) {
@@ -94,16 +86,16 @@ export default class Wallet {
   }
 
   /**
-   * Accesses derived accounts (address/seed pairs) from a Textile wallet
+   * Derives accounts (address/seed pairs) from a Textile wallet
    *
-   * Derives (hardened) key for a path in BIP-44 format from a given seed.
+   * Uses wallet seed to derive (hardened) BIP-32 hierarchical key for a path in BIP-44 format.
    *
    * @param index Account index. This is the (possibly multi-dimensional) index at which to
    * derive an account key. For highly hierarchical systems, an index of arbitrary dimension can
    * be used. For example, to derive the 3rd 2nd-level keypair, of the 1st account, index would
    * be [0, 3].
-   * @param password Mnemonic recovery phrase password (omit if none)
-   * @returns A derived Wallet Account
+   * @param password mnemonic recovery phrase password (omit if none)
+   * @returns The specified index and associated keypair
    */
   accountAt(index: number | number[], password?: string): Account {
     const seed = bip39.mnemonicToSeed(this.recoveryPhrase, password)
@@ -116,12 +108,7 @@ export default class Wallet {
         accountKey = accountKey.deriveHardened(i)
       }
     }
-    // @todo: Should we just return the Keypair object?
-    const kp = Keypair.fromRawEd25519Seed(accountKey.privateKey)
-    return {
-      index,
-      seed: kp.secret(),
-      address: kp.publicKey()
-    }
+    const keypair = Keypair.fromRawEd25519Seed(accountKey.privateKey)
+    return { index, keypair }
   }
 }
