@@ -164,28 +164,30 @@
 					<a name="accountat" class="tsd-anchor"></a>
 					<h3>account<wbr>At</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">account<wbr>At<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, password<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/account.html" class="tsd-signature-type">Account</a></li>
+						<li class="tsd-signature tsd-kind-icon">account<wbr>At<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, password<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/account.html" class="tsd-signature-type">Account</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L106">index.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L108">index.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Accesses derived accounts (address/seed pairs) from a wallet</p>
+									<p>Accesses derived accounts (address/seed pairs) from a Textile wallet</p>
 								</div>
-								<p>Derives key for a path in BIP-44 format and a seed.
-								Ed25119 derivation operated on hardened keys only.</p>
+								<p>Derives (hardened) key for a path in BIP-44 format from a given seed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<h5>index: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Account index</p>
+										<p>Account index. This is the (possibly multi-dimensional) index at which to
+											derive an account key. For highly hierarchical systems, an index of arbitrary dimension can
+											be used. For example, to derive the 3rd 2nd-level keypair, of the 1st account, index would
+										be [0, 3].</p>
 									</div>
 								</li>
 								<li>
@@ -196,7 +198,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/account.html" class="tsd-signature-type">Account</a></h4>
-							<p>A derived Wallet account</p>
+							<p>A derived Wallet Account</p>
 						</li>
 					</ul>
 				</section>

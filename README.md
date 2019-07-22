@@ -110,7 +110,8 @@ This library is a work in progress. As such, there's a few things you can do rig
 <!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
 | **Commits** | **Contributor** |  
 | --- | --- |  
-| 1 | [carsonfarmer](https://github.com/carsonfarmer) |  
+| 7 | [carsonfarmer](https://github.com/carsonfarmer) |  
+| 1 | [andrewxhill](https://github.com/andrewxhill) |  
 
 <!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
 

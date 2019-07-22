@@ -44,11 +44,13 @@
     "crc": "^3.8.0",
     "create-hash": "^1.2.0",
     "create-hmac": "^1.1.7",
-    "tiny-secp256k1": "^1.1.1",
+    "ed2curve": "^0.2.1",
+    "tiny-secp256k1": "^1.1.2",
     "tweetnacl": "^1.0.1"
   },
   "devDependencies": {
     "@textile/tslint-rules": "1.0.3",
+    "@types/ed2curve": "^0.2.2",
     "@types/bip39": "^2.4.2",
     "@types/bs58": "^4.0.0",
     "@types/crc": "^3.4.0",

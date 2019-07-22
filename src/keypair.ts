@@ -1,6 +1,10 @@
 import nacl from 'tweetnacl'
+import { convertPublicKey, convertSecretKey } from 'ed2curve'
 import { sign, verify } from './signing'
 import { StrKey } from './strkey'
+
+const nonceBytes = 24 // Length of nacl nonce
+const ephemeralPublicKeyBytes = 32 // Length of nacl ephemeral public key
 
 /**
  * `Keypair` represents public (and secret) keys of the account.
@@ -122,5 +126,65 @@ export class Keypair {
    */
   verify(data: Buffer, signature: Buffer) {
     return verify(data, signature, this.pubKey)
+  }
+
+  /**
+   * Encrypts the given `data` using a Curve25519 'variant' of the public key.
+   *
+   * The encryption uses an ephemeral private key, which is prepended to the ciphertext,
+   * along with a nonce of random bytes.
+   *
+   * @note See https://github.com/dchest/ed2curve-js for conversion details.
+   * @param data Data to encrypt
+   */
+  encrypt(data: Buffer) {
+    if (this.type !== 'ed25519') {
+      throw Error(`'${this.type}' type keys are not currently supported`)
+    }
+    // generated ephemeral key pair
+    const ephemeral = nacl.box.keyPair()
+    // convert recipient's key into curve25519 (assumes ed25519 keys)
+    const pk = convertPublicKey(this.pubKey)
+    if (!pk) {
+      throw Error('could not convert key type')
+    }
+    // encrypt with nacl
+    const nonce = nacl.randomBytes(24)
+    const ciphertext = nacl.box(data, nonce, pk, ephemeral.secretKey)
+    const merged = new Uint8Array(nonceBytes + ephemeralPublicKeyBytes + ciphertext.byteLength)
+    // prepend nonce
+    merged.set(new Uint8Array(nonce), 0)
+    // then ephemeral public key
+    merged.set(new Uint8Array(ephemeral.publicKey), nonceBytes)
+    // then cipher text
+    merged.set(new Uint8Array(ciphertext), nonceBytes + ephemeralPublicKeyBytes)
+    return Buffer.from(merged)
+  }
+
+  /**
+   * Decrypts the given `data` using a Curve25519 'variant' of the private key.
+   *
+   * Assumes ciphertext includes ephemeral public key and nonce used in original encryption
+   * (e.g., via `encrypt`).
+   *
+   * @note See https://github.com/dchest/ed2curve-js for conversion details.
+   * @param ciphertext Data to decrypt
+   */
+  decrypt(ciphertext: Buffer) {
+    if (this.type !== 'ed25519') {
+      throw Error(`'${this.type}' type keys are not currently supported`)
+    }
+    const pk = convertSecretKey(this.privKey)
+    if (!pk) {
+      throw Error('could not convert key type')
+    }
+    const nonce = ciphertext.slice(0, nonceBytes)
+    const ephemeral = ciphertext.slice(nonceBytes, nonceBytes + ephemeralPublicKeyBytes)
+    const ct = ciphertext.slice(nonceBytes + ephemeralPublicKeyBytes)
+    const plaintext = nacl.box.open(ct, nonce, ephemeral, pk)
+    if (!plaintext) {
+      throw Error('failed to decrypt curve25519')
+    }
+    return Buffer.from(plaintext)
   }
 }
