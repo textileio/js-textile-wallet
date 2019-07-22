@@ -1,7 +1,7 @@
 version: 2
 
 defaults: &defaults
-    working_directory: ~/js-wallet
+    working_directory: ~/js-textie-wallet
     docker:
         - image: node:10.0.0
 
@@ -48,17 +48,17 @@ jobs:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
             - run: yarn install
             - attach_workspace:
-                at: ~/js-wallet
+                at: ~/js-textile-wallet
             - run:
                 name: Authenticate with registry
-                command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/js-wallet/.npmrc
+                command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/js-textile-wallet/.npmrc
             - run:
                 name: Publish package
                 command: npm publish --access=public --unsafe-perm
                         
 workflows:
     version: 2
-    js-wallet:
+    js-textile-wallet:
         jobs:
             - lint-test:
                 filters:
