@@ -43,7 +43,7 @@ export default class Wallet {
   /** Generate a new Wallet from a given word count */
   static fromWordCount(wordCount: number) {
     return Wallet.fromEntropy(
-      ((count) => {
+      (count => {
         switch (count) {
           case 12:
             return 128
@@ -58,7 +58,7 @@ export default class Wallet {
           default:
             return 256
         }
-      })(wordCount)
+      })(wordCount),
     )
   }
 

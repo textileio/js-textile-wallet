@@ -2,11 +2,11 @@ import crc from 'crc'
 import base58 from 'bs58'
 import { verifyChecksum } from './checksum'
 
-const versionBytes: {[key: string]: number} = {
+const versionBytes: { [key: string]: number } = {
   // Version byte used for encoded textile address
   ed25519PublicKey: 0xdd, // Base58-encodes to 'P...'
   // Version byte used for encoded textile seed
-  ed25519SecretSeed: 0xff // Base58-encodes to 'S...'
+  ed25519SecretSeed: 0xff, // Base58-encodes to 'S...'
 }
 
 function calculateChecksum(payload: string | Buffer) {
@@ -41,15 +41,11 @@ function decodeCheck(versionByteName: 'ed25519PublicKey' | 'ed25519SecretSeed', 
   const expectedVersion = versionBytes[versionByteName]
 
   if (expectedVersion === undefined) {
-    throw new Error(
-      `${versionByteName} is not a valid version byte name.`
-    )
+    throw new Error(`${versionByteName} is not a valid version byte name.`)
   }
 
   if (versionByte !== expectedVersion) {
-    throw new Error(
-      `invalid version byte. expected ${expectedVersion}, got ${versionByte}`
-    )
+    throw new Error(`invalid version byte. expected ${expectedVersion}, got ${versionByte}`)
   }
 
   const expectedChecksum = calculateChecksum(payload)

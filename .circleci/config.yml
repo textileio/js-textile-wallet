@@ -3,11 +3,11 @@ version: 2
 defaults: &defaults
     working_directory: ~/js-textile-wallet
     docker:
-        - image: node:10.0.0
+        - image: node:10.13.0
 
 jobs:
     lint-test:
-        <<: *defaults    
+        <<: *defaults
         steps:
             - checkout
             - restore_cache:
@@ -55,7 +55,7 @@ jobs:
             - run:
                 name: Publish package
                 command: npm publish --access=public --unsafe-perm
-                        
+
 workflows:
     version: 2
     js-textile-wallet:

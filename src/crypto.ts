@@ -14,7 +14,7 @@ export function hash160(buffer: string | Buffer) {
     .update(
       createHash('sha256')
         .update(buffer)
-        .digest()
+        .digest(),
     )
     .digest()
 }

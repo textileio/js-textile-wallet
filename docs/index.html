@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@textile/js-wallet</title>
+	<title>@textile/wallet</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">@textile/js-wallet</a>
+					<a href="index.html" class="title">@textile/wallet</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> @textile/js-wallet</h1>
+			<h1> @textile/wallet</h1>
 		</div>
 	</div>
 </header>
@@ -62,22 +62,22 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="textile-data-wallet-js-wallet-">Textile Data Wallet <em>(js-wallet)</em></h1>
+				<h1 id="textile-wallet-in-javascript-js-textile-wallet-">Textile Wallet in Javascript <em>(js-textile-wallet)</em></h1>
 				<p><a href="https://textile.io"><img src="https://img.shields.io/badge/made%20by-Textile-informational.svg?style=popout-square" alt="Made by Textile"></a>
 					<a href="https://slack.textile.io"><img src="https://img.shields.io/badge/slack-slack.textile.io-informational.svg?style=popout-square" alt="Chat on Slack"></a>
-				<a href="./package.json"><img src="https://img.shields.io/github/package-json/keywords/textileio/js-wallet.svg?style=popout-square" alt="Keywords"></a></p>
-				<p><a href="./package.json"><img src="https://img.shields.io/github/package-json/v/textileio/js-wallet.svg?style=popout-square" alt="GitHub package.json version"></a>
-					<a href="https://www.npmjs.com/package/@textile/js-wallet"><img src="https://img.shields.io/npm/v/@textile/js-wallet.svg?style=popout-square" alt="npm (scoped)"></a>
-					<a href="https://www.npmjs.com/package/@textile/js-wallet"><img src="https://img.shields.io/node/v/@textile/js-wallet.svg?style=popout-square" alt="node (scoped)"></a>
-					<a href="./LICENSE"><img src="https://img.shields.io/github/license/textileio/js-wallet.svg?style=popout-square" alt="GitHub license"></a>
-					<a href="https://david-dm.org/textileio/js-wallet"><img src="https://img.shields.io/david/dev/textileio/js-wallet.svg" alt="David"></a>
-					<a href="https://circleci.com/gh/textileio/js-wallet"><img src="https://img.shields.io/circleci/project/github/textileio/js-wallet/master.svg?style=popout-square" alt="CircleCI branch"></a>
+				<a href="./package.json"><img src="https://img.shields.io/github/package-json/keywords/textileio/js-textile-wallet.svg?style=popout-square" alt="Keywords"></a></p>
+				<p><a href="./package.json"><img src="https://img.shields.io/github/package-json/v/textileio/js-textile-wallet.svg?style=popout-square" alt="GitHub package.json version"></a>
+					<a href="https://www.npmjs.com/package/@textile/wallet"><img src="https://img.shields.io/npm/v/@textile/wallet.svg?style=popout-square" alt="npm (scoped)"></a>
+					<a href="https://www.npmjs.com/package/@textile/wallet"><img src="https://img.shields.io/node/v/@textile/wallet.svg?style=popout-square" alt="node (scoped)"></a>
+					<a href="./LICENSE"><img src="https://img.shields.io/github/license/textileio/js-textile-wallet.svg?style=popout-square" alt="GitHub license"></a>
+					<a href="https://david-dm.org/textileio/js-textile-wallet"><img src="https://img.shields.io/david/dev/textileio/js-textile-wallet.svg" alt="David"></a>
+					<a href="https://circleci.com/gh/textileio/js-textile-wallet"><img src="https://img.shields.io/circleci/project/github/textileio/js-textile-wallet/master.svg?style=popout-square" alt="CircleCI branch"></a>
 					<a href="https://github.com/RichardLitt/standard-readme"><img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=popout-square" alt="standard-readme compliant"></a>
-				<a href="https://textileio.github.io/js-wallet/"><img src="https://img.shields.io/badge/docs-master-success.svg?style=popout-square" alt="docs"></a></p>
+				<a href="https://textileio.github.io/js-textile-wallet/"><img src="https://img.shields.io/badge/docs-master-success.svg?style=popout-square" alt="docs"></a></p>
 				<blockquote>
-					<p>Official Textile data wallet Javascript implementation</p>
+					<p>Official Textile data wallet implemented in Javascript</p>
 				</blockquote>
-				<p>Join us on our <a href="https://slack.textile.io/">public Slack channel</a> for news, discussions, and status updates. For current status, and where you can help, please see <a href="https://github.com/textileio/js-wallet/issues/1">issue #1</a>.</p>
+				<p>Join us on our <a href="https://slack.textile.io/">public Slack channel</a> for news, discussions, and status updates.</p>
 				<h2 id="table-of-contents">Table of Contents</h2>
 				<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 				<ul>
@@ -93,8 +93,9 @@
 				</ul>
 				<h2 id="background">Background</h2>
 				<p><a href="https://www.textile.io">Textile</a> provides encrypted, recoverable, schema-based, and cross-application data storage built on <a href="https://github.com/ipfs">IPFS</a> and <a href="https://github.com/libp2p">libp2p</a>. We like to think of it as a decentralized data wallet with built-in protocols for sharing and recovery, or more simply, <strong>an open and programmable iCloud</strong>.</p>
-				<p>A Textile &#39;wallet&#39; is a core component of the Textile system. A wallet is represented by mnemonic phrase, and in practice is a <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> Hierarchical <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">Deterministic Wallet</a> based on Stellar&#39;s implementation of <a href="https://github.com/satoshilabs/slips/blob/master/slip-0010.md">SLIP-0010</a>. You can learn more about BIP39 mnemonics and more in this really nice <a href="https://iancoleman.io/bip39/">interactive webpage</a>. You can think of a wallet as a master key, and the account (see <a href="/concepts/the-wallet#Accounts">accounts</a>) represent keys specific to a given application or use-case. Any given wallet may create an arbitrary number of accounts. For example, you may use a wallet to provision multiple Textile Photos &#39;accounts&#39;, each with a completely different persona if you so choose. This provides a powerful framework &#39;partitioning&#39; use cases. It is also the backbone for enabling account backup and recovery. See <a href="https://docs.textile.io/concepts/the-wallet/">https://docs.textile.io/concepts/the-wallet/</a> for more details. </p>
-				<p>The reference implementation of Textile is <a href="https://github.com/textileio/go-textile">written in Go</a>, and can be compiled to various platforms, including mobile (Android/iOS) and desktop/server (OSX, Windows, Linux, etc). <em>This</em> library provides a Javascript implementation of Textile&#39;s data wallet, to help support things like browser-based Textile apps, Node.js apps, and other use-cases.</p>
+				<p>A Textile &#39;wallet&#39; is a core component of the Textile system. A wallet is represented by mnemonic phrase, and in practice is a <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> Hierarchical <a href="https://en.bitcoin.it/wiki/Deterministic_wallet">Deterministic Wallet</a> based on Stellar&#39;s implementation of <a href="https://github.com/satoshilabs/slips/blob/master/slip-0010.md">SLIP-0010</a>. You can learn more about BIP39 mnemonics and more in this really nice <a href="https://iancoleman.io/bip39/">interactive webpage</a>.</p>
+				<p>You can think of a wallet as a master key, and the account represents keys specific to a given application or use-case. Every account seed &quot;inside&quot; the wallet can be derived from the wallet&#39;s mnemonic phrase. Meaning that the wallet effectively <em>is</em> the mnemonic phrase. Any given wallet may create an arbitrary number of accounts. For example, a single wallet can be used to provision multiple Textile Photos &quot;accounts&quot;, each with a completely different persona. This provides a powerful partitioning framework.</p>
+				<p>Textile account seeds (private keys) always starts with an &quot;S&quot; for &quot;secret&quot; and account addresses (public keys) always start with a &quot;P&quot; for &quot;public&quot;. See <a href="https://docs.textile.io/concepts/the-wallet/">https://docs.textile.io/concepts/the-wallet/</a> for more details. </p>
 				<h2 id="development">Development</h2>
 				<pre><code class="language-sh"><span class="hljs-comment"># Run all the unit tests</span>
 yarn <span class="hljs-built_in">test</span>
@@ -117,7 +118,7 @@ yarn lint</code></pre>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 				<p>You&#39;ll have a global <code>var wallet</code> variable which gives you access to the Textile Wallet and other exported objects.</p>
 				<h2 id="documentation">Documentation</h2>
-				<p>The auto-generated documentation can be found at <a href="https://textileio.github.io/js-wallet/">https://textileio.github.io/js-wallet/</a>.</p>
+				<p>The auto-generated documentation can be found at <a href="https://textileio.github.io/js-textile-wallet/">https://textileio.github.io/js-textile-wallet/</a>.</p>
 				<pre><code class="language-sh"><span class="hljs-comment"># Re-build the documentation</span>
 yarn docs</code></pre>
 				<h2 id="maintainer">Maintainer</h2>
@@ -125,13 +126,12 @@ yarn docs</code></pre>
 				<h2 id="contributing">Contributing</h2>
 				<p>This library is a work in progress. As such, there&#39;s a few things you can do right now to help out:</p>
 				<ul>
-					<li>Check out <a href="https://github.com/textileio/js-wallet/issues/1">issue 1</a> for an up-to-date list (maintained by <a href="https://github.com/carsonfarmer">carsonfarmer</a>) of tasks that could use your help.</li>
 					<li>Ask questions! We&#39;ll try to help. Be sure to drop a note (on the above issue) if there is anything you&#39;d like to work on and we&#39;ll update the issue to let others know. Also <a href="https://slack.textile.io">get in touch</a> on Slack.</li>
-					<li>Log bugs, <a href="https://github.com/textileio/js-wallet/issues">file issues</a>, submit pull requests!</li>
+					<li>Log bugs, <a href="https://github.com/textileio/js-textile-wallet/issues">file issues</a>, submit pull requests!</li>
 					<li><strong>Perform code reviews</strong>. More eyes will help a) speed the project along b) ensure quality and c) reduce possible future bugs.</li>
-					<li>Take a look at <a href="https://github.com/textileio/go-textile">go-textile</a> (which we intend to follow to a point). Contributions here that would be most helpful are <strong>top-level comments</strong> about how it should look based on our understanding. Again, the more eyes the better.</li>
+					<li>Take a look at <a href="https://github.com/textileio/go-textile-wallet">go-textile-wallet</a> (which we intend to follow to a point). Contributions here that would be most helpful are <strong>top-level comments</strong> about how it should look based on our understanding. Again, the more eyes the better.</li>
 					<li><strong>Add tests</strong>. There can never be enough tests.</li>
-					<li><p><strong>Contribute to the <a href="https://github.com/textileio/docs">Textile docs</a></strong> with any additions or questions you have about Textile and its various impmenentations. A good example would be asking, &quot;What is an Account&quot;. If you don&#39;t know a term, odds are someone else doesn&#39;t either. Eventually, we should have a good understanding of where we need to improve communications and teaching together to make Textile even better.</p>
+					<li><p><strong>Contribute to the <a href="https://github.com/textileio/docs">Textile docs</a></strong> with any additions or questions you have about Textile and its various implementations. A good example would be asking, &quot;What is an Account&quot;. If you don&#39;t know a term, odds are someone else doesn&#39;t either. Eventually, we should have a good understanding of where we need to improve communications and teaching together to make Textile even better.</p>
 						<p>Before you get started, be sure to read our <a href="./CONTRIBUTING.md">contributors guide</a> and our <a href="./CODE_OF_CONDUCT.md">contributor covenant code of conduct</a>.</p>
 					</li>
 				</ul>
@@ -146,8 +146,16 @@ yarn docs</code></pre>
 						</tr>
 					</thead>
 					<tbody><tr>
-							<td>1</td>
+							<td>15</td>
 							<td><a href="https://github.com/carsonfarmer">carsonfarmer</a></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td><a href="https://github.com/andrewxhill">andrewxhill</a></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td><a href="https://github.com/apps/dependabot">dependabot[bot]</a></td>
 						</tr>
 				</tbody></table>
 				<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
