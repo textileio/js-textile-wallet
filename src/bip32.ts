@@ -135,7 +135,7 @@ export class BIP32 {
 
     return splitPath.reduce((prevHd: BIP32, indexStr) => {
       let index
-      if (indexStr.slice(-1) === '\'') {
+      if (indexStr.slice(-1) === "'") {
         index = parseInt(indexStr.slice(0, -1), 10)
         return prevHd.deriveHardened(index)
       }
