@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
     working_directory: ~/js-textile-wallet
     docker:
-        - image: node:11.0.0
+        - image: node:10.13.0
 
 jobs:
     lint-test:
