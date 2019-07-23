@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Account | @textile/js-wallet</title>
+	<title>Account | @textile/wallet</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@textile/js-wallet</a>
+					<a href="../index.html" class="title">@textile/wallet</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -74,10 +74,7 @@
 						<dd><p>index The index for the given account</p>
 						</dd>
 						<dt>property</dt>
-						<dd><p>seed The Ed25519 private seed/key</p>
-						</dd>
-						<dt>property</dt>
-						<dd><p>address The Ed25519 public key</p>
+						<dd><p>keypair The associated account Keypair</p>
 						</dd>
 					</dl>
 				</div>
@@ -97,9 +94,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#address" class="tsd-kind-icon">address</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#index" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#seed" class="tsd-kind-icon">seed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="account.html#keypair" class="tsd-kind-icon">keypair</a></li>
 							</ul>
 						</section>
 					</div>
@@ -108,32 +104,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="address" class="tsd-anchor"></a>
-					<h3>address</h3>
-					<div class="tsd-signature tsd-kind-icon">address<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L17">index.ts:17</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="index" class="tsd-anchor"></a>
 					<h3>index</h3>
 					<div class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L15">index.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-textile-wallet/blob/master/src/index.ts#L14">index.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="seed" class="tsd-anchor"></a>
-					<h3>seed</h3>
-					<div class="tsd-signature tsd-kind-icon">seed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="keypair" class="tsd-anchor"></a>
+					<h3>keypair</h3>
+					<div class="tsd-signature tsd-kind-icon">keypair<span class="tsd-signature-symbol">:</span> <a href="../classes/keypair.html" class="tsd-signature-type">Keypair</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/textileio/js-wallet/blob/master/src/index.ts#L16">index.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/textileio/js-textile-wallet/blob/master/src/index.ts#L15">index.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,13 +153,10 @@
 						<a href="account.html" class="tsd-kind-icon">Account</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#address" class="tsd-kind-icon">address</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="account.html#index" class="tsd-kind-icon">index</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="account.html#seed" class="tsd-kind-icon">seed</a>
+								<a href="account.html#keypair" class="tsd-kind-icon">keypair</a>
 							</li>
 						</ul>
 					</li>
