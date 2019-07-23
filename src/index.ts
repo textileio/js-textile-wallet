@@ -16,7 +16,7 @@ export interface Account {
 }
 
 // Textile account path format used for key pair derivation as described in SEP-00XX
-const TEXTILE_BIP44 = `m/44'/406'`
+const bip44Path = `m/44'/406'`
 
 // Derive the 'm' level of the BIP44 wallet
 function createMasterKey(seed: Buffer) {
@@ -100,14 +100,8 @@ export default class Wallet {
   accountAt(index: number | number[], password?: string): Account {
     const seed = bip39.mnemonicToSeed(this.recoveryPhrase, password)
     const masterKey = createMasterKey(seed)
-    const baseKey = masterKey.derivePath(TEXTILE_BIP44)
-    const start = Array.isArray(index) ? index[0] : index
-    let accountKey = baseKey.deriveHardened(start)
-    if (Array.isArray(index) && index.length > 1) {
-      for (const i of index.slice(1)) {
-        accountKey = accountKey.deriveHardened(i)
-      }
-    }
+    const indices = Array.isArray(index) ? index : [index]
+    const accountKey = masterKey.derivePath(`${bip44Path}/${indices.join('\'/')}'`)
     const keypair = Keypair.fromRawEd25519Seed(accountKey.privateKey)
     return { index, keypair }
   }

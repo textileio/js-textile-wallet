@@ -22,6 +22,21 @@ const expected = [
     address: 'P98C1XY1amKmNcVjdtZq2E85XfJR7BnTCPZL1fjyC1Gzernz',
     seed: 'SY2734iXMjRGbaFmFGkz7AeiA9LCHZPG16L4mQGCxZVVJuDv',
   },
+  {
+    index: [1, 2, 3],
+    address: 'P5syJiscendr1sNCCZJmfrCYfyUjL4DaoSVYgzk1TGEQ5ugW',
+    seed: 'SYBXCWT9yjJTJ9LJg1FWRHHUQE9cZGJZaJ6dk9NrkVbX4gBF',
+  },
+  {
+    index: [3, 2, 1],
+    address: 'P595UCKBYW2TeZhYxDxHX34UiD4R4C6rtYggJiLWs4E5fbGF',
+    seed: 'SWjSsNHWVmkT6bidBFr2AimApWZ8gGrbTrEzqjXoMRzZdGxN',
+  },
+  {
+    index: [1, 1, 1, 1, 1, 1, 1],
+    address: 'P65jAHJYpM7YnkXKBTvmzwykwBdavhSAFjF1HKCbxcUeGU61',
+    seed: 'SSyHgSUAwTs3LwrmKHAXhyNSwoXfKG8w9AqXnZAAJELLBE5G',
+  },
 ]
 
 describe('wallet accountAt', () => {
