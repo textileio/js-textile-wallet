@@ -106,17 +106,6 @@ This library is a work in progress. As such, there's a few things you can do rig
 
  Before you get started, be sure to read our [contributors guide](./CONTRIBUTING.md) and our [contributor covenant code of conduct](./CODE_OF_CONDUCT.md).
 
-## Contributors
-<!-- Update with yarn credit -->
-<!-- ⛔️ AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
-| **Commits** | **Contributor** |  
-| --- | --- |  
-| 15 | [carsonfarmer](https://github.com/carsonfarmer) |  
-| 1  | [andrewxhill](https://github.com/andrewxhill) |  
-| 1  | [dependabot[bot]](https://github.com/apps/dependabot) |  
-
-<!-- ⛔️ AUTO-GENERATED-CONTENT:END -->
-
 ## License
 
 [MIT](./LICENSE)
