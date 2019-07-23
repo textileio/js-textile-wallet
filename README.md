@@ -19,16 +19,13 @@ Join us on our [public Slack channel](https://slack.textile.io/) for news, discu
 
 ## Table of Contents
 
-<!-- AUTO-GENERATED-CONTENT:START (TOC) -->
 - [Background](#background)
 - [Development](#development)
 - [Browser](#browser)
 - [Documentation](#documentation)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
-- [Contributors](#contributors)
 - [License](#license)
-<!-- AUTO-GENERATED-CONTENT:END -->
 
 ## Background
 
