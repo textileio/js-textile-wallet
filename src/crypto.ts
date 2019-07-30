@@ -10,7 +10,7 @@ import createHmac from 'create-hmac'
  * @param data Input data
  */
 export function hash160(buffer: string | Buffer) {
-  return createHash('rmd160')
+  return createHash('ripemd160')
     .update(
       createHash('sha256')
         .update(buffer)

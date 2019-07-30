@@ -14,13 +14,14 @@
     "baseUrl": ".",
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
     "scripts",
     "node_modules",
     "docs",
     "dist",
+    "**/__test__",
   ],
   "compileOnSave": true,
   "typedocOptions": {
