@@ -1,4 +1,4 @@
-import Wallet from '../index'
+import { Wallet } from '../index'
 
 const mnemonic = 'atom check bronze man connect iron swear degree excess dawn quantum sting'
 const expected = [

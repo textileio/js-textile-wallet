@@ -39,7 +39,7 @@ function createMasterKey(seed: Buffer) {
  * used to sign backups, provision libp2p identities, etc. Textile uses Ed25519 here because
  * it's fast, compact, secure, and widely used. See the EdDSA Wikipedia page for more details.
  */
-export default class Wallet {
+export class Wallet {
   /** Generate a new Wallet from a given word count */
   static fromWordCount(wordCount: number) {
     return Wallet.fromEntropy(

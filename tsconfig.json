@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "strict": true,
     "outDir": "dist",
-    "baseUrl": ".",
+    "baseUrl": "."
   },
   "include": [
     "src/**/*"
@@ -21,7 +21,7 @@
     "node_modules",
     "docs",
     "dist",
-    "**/__test__",
+    "**/__test__"
   ],
   "compileOnSave": true,
   "typedocOptions": {
