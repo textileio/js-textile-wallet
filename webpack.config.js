@@ -4,7 +4,7 @@ const extensions = ['.tsx', '.ts', '.js', 'json']
 
 module.exports = {
   entry: './src/index.ts',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
