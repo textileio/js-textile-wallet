@@ -1,3 +1,5 @@
+**WARNING**: **`js-textile-wallet` has been deprecated. It is no longer needed for Textile's javascript tools.**
+
 # Textile Wallet in Javascript _(js-textile-wallet)_
 
 [![Made by Textile](https://img.shields.io/badge/made%20by-Textile-informational.svg?style=popout-square)](https://textile.io)
